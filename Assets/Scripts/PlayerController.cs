@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 8f;
 
 
+    //Interaction components
+    PlayerInteraction playerInteraction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
+        //Get interaction component
+        playerInteraction = GetComponentInChildren<PlayerInteraction>();
 
     }
 
@@ -30,6 +35,21 @@ public class PlayerController : MonoBehaviour
     {
         //Runs the function that handles all movement
         Move();
+
+        //Runs the function that handles all interaction
+        Interact();
+    }
+
+    public void Interact()
+    {
+        //Tool interaction
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //Interact
+            playerInteraction.Interact();
+        }
+
+        //TODO: Set up item interaction
     }
 
 
