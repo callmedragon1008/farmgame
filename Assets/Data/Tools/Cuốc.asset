@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bbe63e5b12a7b742be911ca8e54a43e, type: 3}
+  m_Name: "Cu\u1ED1c"
+  m_EditorClassIdentifier: 
+  description: "D\u1EE5ng c\u1EE5 l\xE0m \u0111\u1EA5t, tr\u1ED3ng c\xE2y"
+  thumbnail: {fileID: -1921560996, guid: 07a3a7ddcf4692c42beb656e57a841f6, type: 3}
+  gameModel: {fileID: 0}
+  toolType: 0

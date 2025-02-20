@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fdb03720e61554e8c07461dc535a38, type: 3}
+  m_Name: "H\u1EA1t Gi\u1ED1ng B\u1EAFp C\u1EA3i"
+  m_EditorClassIdentifier: 
+  description: "H\u1EA1t gi\u1ED1ng \u0111\u1EC3 tr\u1ED3ng c\xE2y b\u1EAFp c\u1EA3i"
+  thumbnail: {fileID: 1481454274, guid: 07a3a7ddcf4692c42beb656e57a841f6, type: 3}
+  gameModel: {fileID: 0}
+  daysToGrow: 3
+  cropToYield: {fileID: 11400000, guid: 442a19c8b17d8bf4293c4aaf29c6ed81, type: 2}
