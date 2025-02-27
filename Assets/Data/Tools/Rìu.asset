@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "R\xECu"
   m_EditorClassIdentifier: 
   description: "C\xF4ng c\u1EE5 d\xF9ng \u0111\u1EC3 ch\u1EB7t c\xE2y v\xE0 g\u1ED7"
-  thumbnail: {fileID: 1670339454, guid: 07a3a7ddcf4692c42beb656e57a841f6, type: 3}
+  thumbnail: {fileID: -1504205288, guid: d850a0c4b47a7754097462952033d5ac, type: 3}
   gameModel: {fileID: 0}
   toolType: 2

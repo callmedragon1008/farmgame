@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "Cu\u1ED1c Chim"
   m_EditorClassIdentifier: 
   description: "D\u1EE5ng c\u1EE5 khai th\xE1c \u0111\xE1 v\xE0 qu\u1EB7ng"
-  thumbnail: {fileID: 1783780074, guid: 07a3a7ddcf4692c42beb656e57a841f6, type: 3}
+  thumbnail: {fileID: 936533457, guid: d850a0c4b47a7754097462952033d5ac, type: 3}
   gameModel: {fileID: 0}
   toolType: 3

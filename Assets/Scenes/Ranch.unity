@@ -1694,13 +1694,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437006497}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.042744625, y: -0, z: -0, w: 0.999086}
-  m_LocalPosition: {x: 0, y: 2.81, z: -6.6}
+  m_LocalRotation: {x: 0.10710806, y: -0, z: -0, w: 0.99424744}
+  m_LocalPosition: {x: 0, y: 3.35, z: -6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 4.9, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.297, y: 0, z: 0}
 --- !u!114 &437006501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 059bb850951df034c8ad48841d10574b, type: 2}
   - {fileID: 11400000, guid: 90bef82402d1c4b43bb41c22776d7310, type: 2}
   - {fileID: 11400000, guid: 338b1b33cec2c9146bbef286c190de99, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 98fd6663e1551d048807b31688f8de29, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -5324,8 +5324,8 @@ MonoBehaviour:
   timestamp:
     year: 0
     season: 0
-    day: 3
-    hour: 22
+    day: 1
+    hour: 12
     minute: 0
   timeScale: 1
   sunTransform: {fileID: 2143687176}

@@ -186,6 +186,7 @@ MonoBehaviour:
   farmlandMat: {fileID: 2100000, guid: 3fe4c8bfd780cdd43be0e7e43e11b260, type: 2}
   wateredMat: {fileID: 2100000, guid: 8e58c457acbd2fc4e807979ca680eeee, type: 2}
   select: {fileID: 1893429747639276365}
+  cropPrefab: {fileID: 5913804214569731133, guid: 22ce2673a295f53439dc88f720e5fe03, type: 3}
 --- !u!65 &6335760747116685534
 BoxCollider:
   m_ObjectHideFlags: 0
