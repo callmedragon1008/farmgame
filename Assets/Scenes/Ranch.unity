@@ -544,6 +544,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDisplayImage: {fileID: 1891407584}
   inventoryType: 0
+--- !u!4 &118733807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6869178551027537381, guid: 3125045443f552d438dced5e9b113b6d, type: 3}
+  m_PrefabInstance: {fileID: 983494049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &130966840 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1006823766672527741, guid: a54a3c6b289020245ba6ac287d3cd0a1, type: 3}
@@ -2744,6 +2749,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191dfbb4b69ab041b4b2c84da24a74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &910861922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910861923}
+  m_Layer: 0
+  m_Name: Hand Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910861923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910861922}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118733807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &932472793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5705228860458394250, guid: c509b54ec78849a48b9c42ec5b796329, type: 3}
@@ -2991,9 +3027,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4376701137058679624, guid: 3125045443f552d438dced5e9b113b6d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6869178551027537381, guid: 3125045443f552d438dced5e9b113b6d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910861923}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1018655246314262712, guid: 3125045443f552d438dced5e9b113b6d, type: 3}
       insertIndex: -1
@@ -5309,6 +5352,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   equippedItem: {fileID: 0}
+  handPoint: {fileID: 910861923}
 --- !u!114 &1989954009
 MonoBehaviour:
   m_ObjectHideFlags: 0
