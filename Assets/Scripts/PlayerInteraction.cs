@@ -6,7 +6,8 @@ public class PlayerInteraction : MonoBehaviour
 {
     //The land the player is currently selecting
     Land selectedLand = null;
-
+    //The interactable object the player is currently selecting
+    InteractableObject selectedInteractable = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,19 @@ public class PlayerInteraction : MonoBehaviour
             SelectLand(land);
             return;
         }
+        //Check if the player is going to interact with an Item
+        if (other.tag == "Item")
+        {
+            //Set the interactable to the currently selected interactable
+            selectedInteractable = other.GetComponent<InteractableObject>();
+            return;
+        }
 
+        //Deselect the interactable if the player is not standing on anything at the moment
+        if (selectedInteractable != null)
+        {
+            selectedInteractable = null;
+        }
         //Deselect the land if the player is not standing on any land at the moment
         if (selectedLand != null)
         {
@@ -69,6 +82,20 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        Debug.Log("Not on any land!");
+    }
+    //Triggered when the player presses the item interact button
+    public void ItemInteract()
+    {
+        if (InventoryManager.Instance.equippedItem != null)
+        {
+            InventoryManager.Instance.HandToInventory(InventorySlot.InventoryType.Item);
+            return;
+        }
+        //Check if there is an interactable selected
+        if (selectedInteractable != null)
+        {
+            //Pick it up
+            selectedInteractable.Pickup();
+        }
     }
 }
