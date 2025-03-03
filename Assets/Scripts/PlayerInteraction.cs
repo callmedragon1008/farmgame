@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    PlayerController playerController;
+
     //The land the player is currently selecting
     Land selectedLand = null;
+
     //The interactable object the player is currently selecting
     InteractableObject selectedInteractable = null;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //Get access to our PlayerController component
+        playerController = transform.parent.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -37,6 +42,7 @@ public class PlayerInteraction : MonoBehaviour
             SelectLand(land);
             return;
         }
+
         //Check if the player is going to interact with an Item
         if (other.tag == "Item")
         {
@@ -50,6 +56,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             selectedInteractable = null;
         }
+
         //Deselect the land if the player is not standing on any land at the moment
         if (selectedLand != null)
         {
@@ -75,6 +82,12 @@ public class PlayerInteraction : MonoBehaviour
     //Triggered when the player presses the tool button
     public void Interact()
     {
+        //The player shouldn't be able to use his tool when he has his hands full with an item
+        if (InventoryManager.Instance.equippedItem != null)
+        {
+            return;
+        }
+
         //Check if the player is selecting any land
         if (selectedLand != null)
         {
@@ -82,20 +95,27 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
+        Debug.Log("Not on any land!");
     }
+
     //Triggered when the player presses the item interact button
     public void ItemInteract()
     {
+        //If the player is holding something, keep it in his inventory
         if (InventoryManager.Instance.equippedItem != null)
         {
             InventoryManager.Instance.HandToInventory(InventorySlot.InventoryType.Item);
             return;
         }
+
+        //If the player isn't holding anything, pick up an item
+
         //Check if there is an interactable selected
         if (selectedInteractable != null)
         {
             //Pick it up
             selectedInteractable.Pickup();
         }
+
     }
 }

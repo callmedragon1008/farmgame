@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bbe63e5b12a7b742be911ca8e54a43e, type: 3}
-  m_Name: "R\xECu"
+  m_Name: "X\u1EBBng"
   m_EditorClassIdentifier: 
-  description: "D\u1EE5ng c\u1EE5 d\xF9ng \u0111\u1EC3 ch\u1EB7t c\xE2y v\xE0 g\u1ED7"
-  thumbnail: {fileID: -1504205288, guid: d850a0c4b47a7754097462952033d5ac, type: 3}
+  description: "D\u1EE5ng c\u1EE5 \u0111\u1EC3 \u0111\xE0o \u0111\u1EA5t lo\u1EA1i
+    b\u1ECF c\xE2y tr\u1ED3ng"
+  thumbnail: {fileID: 243579104, guid: d850a0c4b47a7754097462952033d5ac, type: 3}
   gameModel: {fileID: 0}
-  toolType: 2
+  toolType: 4
