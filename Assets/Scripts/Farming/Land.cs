@@ -85,10 +85,10 @@ public class Land : MonoBehaviour, ITimeTracker
     public void Interact()
     {
         //Check the player's tool slot
-        ItemData toolSlot = InventoryManager.Instance.equippedTool;
+        ItemData toolSlot = InventoryManager.Instance.GetEquippedSlotItem(InventorySlot.InventoryType.Tool);
 
         //If there's nothing equipped, return
-        if (toolSlot == null)
+        if (!InventoryManager.Instance.SlotEquipped(InventorySlot.InventoryType.Tool))
         {
             return;
         }
@@ -110,6 +110,7 @@ public class Land : MonoBehaviour, ITimeTracker
                 case EquipmentData.ToolType.WateringCan:
                     SwitchLandStatus(LandStatus.Watered);
                     break;
+
                 case EquipmentData.ToolType.Shovel:
 
                     //Remove the crop from the land
@@ -120,21 +121,31 @@ public class Land : MonoBehaviour, ITimeTracker
                     break;
             }
 
+            //We don't need to check for seeds if we have already confirmed the tool to be an equipment
             return;
-
         }
+
+        //Try casting the itemdata in the toolslot as SeedData
         SeedData seedTool = toolSlot as SeedData;
 
+        ///Conditions for the player to be able to plant a seed
+        ///1: He is holding a tool of type SeedData
+        ///2: The Land State must be either watered or farmland
+        ///3. There isn't already a crop that has been planted
         if (seedTool != null && landStatus != LandStatus.Soil && cropPlanted == null)
         {
             //Instantiate the crop object parented to the land
             GameObject cropObject = Instantiate(cropPrefab, transform);
             //Move the crop object to the top of the land gameobject
             cropObject.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
             //Access the CropBehaviour of the crop we're going to plant
             cropPlanted = cropObject.GetComponent<CropBehaviour>();
             //Plant it with the seed's information
             cropPlanted.Plant(seedTool);
+
+            //Consume the item
+            InventoryManager.Instance.ConsumeItem(InventoryManager.Instance.GetEquippedSlot(InventorySlot.InventoryType.Tool));
 
         }
     }
