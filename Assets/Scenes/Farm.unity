@@ -55061,27 +55061,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essentials
       objectReference: {fileID: 0}
-    - target: {fileID: 6523060073924563641, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-      propertyPath: fadeIn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6523060073924563641, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-      propertyPath: fadeOut
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6523060073924563641, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108449939992190548, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-      propertyPath: timestamp.hour
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2153629447271930821, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-    - {fileID: 8878901643135805936, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
-    - {fileID: 5965163761596501801, guid: d191df0e075251f489c00450ce9ead6a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d191df0e075251f489c00450ce9ead6a, type: 3}

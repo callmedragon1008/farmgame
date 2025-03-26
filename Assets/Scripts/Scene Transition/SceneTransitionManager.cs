@@ -15,6 +15,7 @@ public class SceneTransitionManager : MonoBehaviour
     //The player's transform
     Transform playerPoint;
 
+    bool screenFadedOut;
 
     private void Awake()
     {
@@ -42,7 +43,31 @@ public class SceneTransitionManager : MonoBehaviour
     //Switch the player to another scene
     public void SwitchLocation(Location locationToSwitch)
     {
+        UIManager.Instance.FadeOutScreen();
+        screenFadedOut = false;
+        StartCoroutine(ChangeScene(locationToSwitch));
+    }
+    IEnumerator ChangeScene(Location locationToSwitch)
+    {
+        //Disable the player's CharacterController component
+        CharacterController playerCharacter = playerPoint.GetComponent<CharacterController>();
+        playerCharacter.enabled = false;
+        //Wait for the scene to finish fading out before loading the next scene
+        while (!screenFadedOut)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        //Reset the boolean
+        screenFadedOut = false;
+        UIManager.Instance.ResetFadeDefaults();
         SceneManager.LoadScene(locationToSwitch.ToString());
+    }
+
+    //Called when the screen has faded out
+    public void OnFadeOutComplete()
+    {
+        screenFadedOut = true;
+
     }
 
     //Called when a scene is loaded
