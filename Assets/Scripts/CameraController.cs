@@ -1,33 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float offsetZ = 5f;
-    public float smoothing = 2f;
-    //player transform component
+    public float offsetZ = 5f;    // Offset theo trục Z (khoảng cách phía sau người chơi)
+    public float offsetY = 2f;    // Offset theo trục Y (độ cao so với người chơi)
+    public float smoothing = 2f;  // Độ mượt mà khi di chuyển
     Transform playerPos;
-    // Start is called before the first frame update
+
     void Start()
     {
-        //Find the player gameobject in the scene and get its transform component
         playerPos = FindObjectOfType<PlayerController>().transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
+        if (playerPos != null)
+        {
+            FollowPlayer();
+        }
     }
 
-    //Following the player
     void FollowPlayer()
     {
-        //Position the camera should be in
-        Vector3 targetPosition = new Vector3(playerPos.position.x, transform.position.y, playerPos.position.z - offsetZ);
+        // Tính vị trí mục tiêu: lấy Y từ người chơi và thêm offsetY
+        Vector3 targetPosition = new Vector3(
+            playerPos.position.x,
+            playerPos.position.y + offsetY,
+            playerPos.position.z - offsetZ
+        );
 
-        //Set the position accordingly
+        // Di chuyển camera mượt mà tới vị trí mục tiêu
         transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
     }
 }

@@ -73,6 +73,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
     //Render the inventory screen to reflect the Player's Inventory. 
     public void RenderInventory()
     {
+        //Get the respective slots to process
         ItemSlotData[] inventoryToolSlots = InventoryManager.Instance.GetInventorySlots(InventorySlot.InventoryType.Tool);
         ItemSlotData[] inventoryItemSlots = InventoryManager.Instance.GetInventorySlots(InventorySlot.InventoryType.Item);
 
@@ -89,6 +90,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
         //Get Tool Equip from InventoryManager
         ItemData equippedTool = InventoryManager.Instance.GetEquippedSlotItem(InventorySlot.InventoryType.Tool);
 
+        //Text should be empty by default
         toolQuantityText.text = "";
         //Check if there is an item to display
         if (equippedTool != null)
@@ -97,6 +99,7 @@ public class UIManager : MonoBehaviour, ITimeTracker
             toolEquipSlot.sprite = equippedTool.thumbnail;
 
             toolEquipSlot.gameObject.SetActive(true);
+
             //Get quantity 
             int quantity = InventoryManager.Instance.GetEquippedSlot(InventorySlot.InventoryType.Tool).quantity;
             if (quantity > 1)
